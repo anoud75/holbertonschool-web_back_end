@@ -1,6 +1,6 @@
-const readDatabase = require('../utils');
+import readDatabase from '../utils';
 
-class StudentsController {
+export default class StudentsController {
   static getAllStudents(req, res) {
     const filePath = process.argv[2];
     readDatabase(filePath)
@@ -30,5 +30,3 @@ class StudentsController {
       .catch(() => res.status(500).send('Cannot load the database'));
   }
 }
-
-module.exports = StudentsController;
